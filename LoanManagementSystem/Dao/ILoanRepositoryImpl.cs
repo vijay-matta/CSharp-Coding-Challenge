@@ -215,14 +215,12 @@ namespace LoanManagementSystem.Dao
             int noOfEMIsPaid = (int)(amount / emi);
             Console.WriteLine($"You can pay {noOfEMIsPaid} EMIs with the amount {amount}");
 
-            // Assuming the loan has an outstanding balance to reduce
-            // If you want to update the loan based on the repayment
+           
             if (loan.LoanTerm > noOfEMIsPaid)
             {
-                loan.LoanTerm -= noOfEMIsPaid;  // Update loan term after repayment
+                loan.LoanTerm -= noOfEMIsPaid;  
 
-                // You might also want to update the principal or interest if the loan is partially repaid.
-                // If the full amount is repaid, set the status to 'Paid' or 'Closed'.
+                
                 if (loan.LoanTerm == 0)
                 {
                     loan.LoanStatus = "Paid";
